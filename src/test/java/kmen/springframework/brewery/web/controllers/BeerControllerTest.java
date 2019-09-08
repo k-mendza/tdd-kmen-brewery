@@ -69,7 +69,8 @@ class BeerControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$.id", is(validBeer.getId().toString())))
-                .andExpect(jsonPath("$.beerName", is(validBeer.getBeerName())));
+                .andExpect(jsonPath("$.beerName", is(validBeer.getBeerName())))
+                .andExpect(jsonPath("$.price", is(new BigDecimal("12.99").toString())));
     }
 
 
